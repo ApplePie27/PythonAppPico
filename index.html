@@ -1,48 +1,93 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
 <!-- 
 Page WEB projet BRAVO
 Samuel Guérard - Halima Hikmat
 
-V-0.0 - 2026-02-25
-V-0.1 - 
+V-0.0 - 2026-02-25 (création du fichier & barre options)
+V-0.1 - 2026-03-04 (ajout emplacements pour logs & postes)
+V-0.2 - 2026-03-11 (création des scripts qui seront a modifier dans l'avenir)
+V-0.3 - 
 -->
+
+<!-- Permet d'utiliser les styles de W3schools -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-  <style>
-    postes
-    {
-        float: left;
-        width: 70%;
-        height: 300px; /* only for demonstration, should be removed */
-        background: #ccc;
-        padding: 20px;
-    }
-    logs
-    {
-        float: right;
-        width: 30%;
-        height: 300px; /* only for demonstration, should be removed */
-        background: #ccc;
-        padding: 20px;
-    }
-  </style>
+
+<!-- nom de la page WEB -->
+<title> BRAVO Project</title>
+<!-- image test pour l'icon de la page WEB -->
+<link rel="icon" type="image" href="images/froggo_dumbsterfire.jpg">
+
+<!-- styles utilises dans la page WEB (a mettre dans un fichier a part idealement) -->
+<style>
+  postes
+  {
+    float: left;
+    width: 70%;
+    height: 800px; /* only for demonstration, should be removed */
+    background: #e9e9e9;
+    padding: 20px;
+  }
+  logs
+  {
+    float: right;
+    width: 30%;
+    height: 800px; /* only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+  }
+</style>
+
+<script>
+
+  // Bloquer tout les postes -------------- ajouter le ID de chauqe poste
+  function fctLockAll()
+  {
+    document.getElementsById("").disabled = true;
+  }
+  // Debloquer tout les postes -------------- ajouter le ID de chauqe poste
+  function fctUnlockAll()
+  {
+    document.getElementsById("").disabled = false;
+  }
+  //connexion
+  function fctLogin()
+  {
+  }
+  // Deconnexion
+  function fctLogout()
+  {
+    window.close();
+  }
+  // Afficher ce que la camera voit
+  function fctCamera()
+  {
+  }
+</script>
 
 <head>
   <!-- Barre menu de navigation -->
   <div class="w3-bar w3-dark-grey">
-    <a href="#" class="w3-bar-item w3-button w3-black">Camera</a>
+    <a href="#" class="w3-bar-item w3-button w3-black" onclick="fctCamera()">Camera</a>
     <div class="w3-dropdown-hover">
       <button class="w3-button">Options</button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-grey">
-        <a href="#" class="w3-bar-item w3-button" oninput="fctLockAll()">Bloquer tout</a>
-        <a href="#" class="w3-bar-item w3-button" oninput="fctUnlockAll()">Debloquer tout</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="fctLockAll()">Bloquer tout</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="fctUnlockAll()">Debloquer tout</a>
       </div>
     </div>
-    <a href="#" class="w3-bar-item w3-button" oninput="fctLogout()">Deconnexion</a>
+    <a href="#" class="w3-bar-item w3-button" onclick="fctLogout()">Deconnexion</a>
   </div> 
 </head>
 
+<br>
+
+<!-- Affichage des postes et des logs du serveur -->
 <body>
+  <postes>postes ICI</postes>
+  
+  <logs>Affichage des logs ICI</logs>
 </body>
 
 </html>
