@@ -11,7 +11,7 @@ V-0.2 - 2026-03-11 (création des scripts qui seront a modifier dans l'avenir)
 V-0.3 - 2026-03-18 (création fichier de styles)
 V-0.4 - 
 -->
-
+<head>
 <!-- Permet d'utiliser les styles de W3schools -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <!-- styles utilises dans la page WEB (a mettre dans un fichier a part idealement) -->
@@ -48,8 +48,8 @@ V-0.4 -
   {
   }
 </script>
-
-<head>
+</head>
+<body>
   <!-- Barre menu de navigation -->
   <div class="w3-bar w3-dark-grey">
     <a href="#" class="w3-bar-item w3-button w3-black" onclick="fctCamera()">Camera</a>
@@ -57,17 +57,17 @@ V-0.4 -
       <button class="w3-button">Options</button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-grey">
         <a href="#" class="w3-bar-item w3-button" onclick="fctLockAll()">Bloquer tout</a>
-        <a href="#" class="w3-bar-item w3-button" onclick="fctUnlockAll()">Debloquer tout</a>
+        <a href="#" class="w3-button" onclick="fctUnlockAll()">Debloquer tout</a>
       </div>
     </div>
     <a href="#" class="w3-bar-item w3-button" onclick="fctLogout()">Deconnexion</a>
   </div> 
-</head>
+
 
 <br>
 
 <!-- Affichage des postes et des logs du serveur -->
-<body>
+
   <p class="postes">postes ICI</p>
   
   <p class="logs">Affichage des logs ICI</p>
