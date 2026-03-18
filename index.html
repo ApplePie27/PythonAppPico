@@ -59,6 +59,18 @@ V-0.4 -
     {
        $(".postes").removeAttr("disabled"); //enable
     });
+
+     // Ouvrir modal
+    $("#btnCamera").click(function()
+    {
+        $("#cameraModal").css("display", "block");
+    });
+
+    // Fermer modal
+    $("#closeCamera").click(function()
+    {
+      $("#cameraModal").hide();
+    });
   });
 </script>
 </head>
@@ -66,7 +78,7 @@ V-0.4 -
   <!-- Barre menu de navigation -->
   <div class="w3-bar w3-dark-grey">
   <!-- Menu "Camera" qui ouvre une modal -->
-  <a href="#" id="btnCamera" class="w3-bar-item w3-button w3-black" onclick="document.getElementById('cameraModal').style.display='block'">Camera</a>
+  <a href="#" id="btnCamera" class="w3-bar-item w3-button w3-black">Camera</a>
      <!-- Modal pour "Camera" -->
   <div id="cameraModal" class="w3-modal">
     <div class="w3-modal-content">
