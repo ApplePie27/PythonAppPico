@@ -26,29 +26,9 @@ V-0.4 -
 
 <script>
 
-  // Bloquer tout les postes -------------- ajouter le ID de chauqe poste
-  function fctLockAll()
-  {
-    document.getElementsById("").disabled = true;
-  }
-  // Debloquer tout les postes -------------- ajouter le ID de chauqe poste
-  /*function fctUnlockAll()
-  {
-    document.getElementsById("").disabled = false;
-  }
-  //connexion
-  function fctLogin()
-  {
-  }
-  // Deconnexion
-  function fctLogout()
-  {
-    window.close();
-  }
-  // Afficher ce que la camera voit
-  function fctCamera()
-  {
-  }*/
+// close window : window.close();
+
+  // BLoquer tous et/ou debloquer tous les postes
   $(document).ready(function()
   {
     $("#blkAll").click(function()
@@ -71,6 +51,9 @@ V-0.4 -
     {
       $("#cameraModal").hide();
     });
+
+    // Fermer la page / deconnexion
+    
   });
 </script>
 </head>
@@ -109,9 +92,19 @@ V-0.4 -
 
 <!-- Affichage des postes et des logs du serveur -->
 
-  <p class="postes">postes ICI</p>
+  <!-- division pour les postes -->
+  <div class="postesArea">
+    <p class="postes">postes ICI</p>
+    <br>
+    <input class="postes" type="button" value="chose">
+  </div>
   
-  <p class="logs">Affichage des logs ICI </p>
+  <!-- division pour les logs -->
+  <div class="logsArea">
+    <p class="logs" >Affichage des logs ICI </p>
+  </div>
+  
+  
 </body>
 
 </html>

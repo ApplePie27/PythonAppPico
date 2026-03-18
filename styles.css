@@ -1,4 +1,4 @@
-.postes
+.postesArea
 {
     float: left;
     width: 70%;
@@ -6,7 +6,7 @@
     background: #dbdbdb;
     padding: 20px;
 }
-.logs
+.logsArea
 {
     float: right;
     width: 30%;
