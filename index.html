@@ -13,31 +13,13 @@ V-0.3 -
 
 <!-- Permet d'utiliser les styles de W3schools -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-
+<!-- styles utilises dans la page WEB (a mettre dans un fichier a part idealement) -->
+ <link href="styles.css">
 <!-- nom de la page WEB -->
 <title> BRAVO Project</title>
 <!-- image test pour l'icon de la page WEB -->
 <link rel="icon" type="image" href="images/froggo_dumbsterfire.jpg">
 
-<!-- styles utilises dans la page WEB (a mettre dans un fichier a part idealement) -->
-<style>
-  postes
-  {
-    float: left;
-    width: 70%;
-    height: 800px; /* only for demonstration, should be removed */
-    background: #e9e9e9;
-    padding: 20px;
-  }
-  logs
-  {
-    float: right;
-    width: 30%;
-    height: 800px; /* only for demonstration, should be removed */
-    background: #ccc;
-    padding: 20px;
-  }
-</style>
 
 <script>
 
@@ -85,9 +67,9 @@ V-0.3 -
 
 <!-- Affichage des postes et des logs du serveur -->
 <body>
-  <postes>postes ICI</postes>
+  <p class="postes" style="float: left;">postes ICI</postes>
   
-  <logs>Affichage des logs ICI</logs>
+  <p class="logs" style="float: right;">Affichage des logs ICI</logs>
 </body>
 
 </html>
