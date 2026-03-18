@@ -8,7 +8,8 @@ Samuel Guérard - Halima Hikmat
 V-0.0 - 2026-02-25 (création du fichier & barre options)
 V-0.1 - 2026-03-04 (ajout emplacements pour logs & postes)
 V-0.2 - 2026-03-11 (création des scripts qui seront a modifier dans l'avenir)
-V-0.3 - 2026-03-18 (création fichier de styles + ajout pop-up camera + modifications barre de menu)
+V-0.3 - 2026-03-18 (création fichier de styles + ajout pop-up camera + modifications barre de menu
+        + possibilité de bloquer les postes (reste a configurer la communication avec le serveur pour finaliser/rendre effectif))
 V-0.4 - 
 -->
 <head>
@@ -34,10 +35,14 @@ V-0.4 -
     $("#blkAll").click(function()
     {
       $(".postes").attr("disabled", "disabled"); //disable
+      $(".postes").prop("checked", 1); //check all
+      // AJOUTER action pour bloquer TOUS LES POSTES
     });
     $("#ublkAll").click(function()
     {
        $(".postes").removeAttr("disabled"); //enable
+       $(".postes").prop("checked", 0); //uncheck all
+       // AJOUTER action pour debloquer TOUS LES POSTES
     });
 
      // Ouvrir modal
@@ -51,6 +56,41 @@ V-0.4 -
     {
       $("#cameraModal").hide();
     });
+
+    // Bloquer les postes qui ont été check avec les checkbox (envoit request au serveur)
+    $("#postesSubmit").click(function()
+  {
+    if($("#poste1Lock").is(":checked"))
+    {
+      alert("BOX 1 CHECKED"); //test fonctionnement
+      //mettre l'action pour bloquer le poste 1
+    }
+    else if(!$("#poste1Lock").is(":checked"))
+    {
+      alert("BOX 1 UNCHECKED"); //test fonctionnement
+      //mettre l'action pour debloquer le poste 1
+    }
+    if($("#poste2Lock").is(":checked"))
+    {
+      alert("BOX 2 CHECKED"); //test fonctionnement
+      //mettre l'action pour bloquer le poste 1
+    }
+    else if(!$("#poste2Lock").is(":checked"))
+    {
+      alert("BOX 2 UNCHECKED"); //test fonctionnement
+      //mettre l'action pour debloquer le poste 1
+    }
+    if($("#poste3Lock").is(":checked"))
+    {
+      alert("BOX 3 CHECKED"); //test fonctionnement
+      //mettre l'action pour bloquer le poste 1
+    }
+    else if(!$("#poste3Lock").is(":checked"))
+    {
+      alert("BOX 3 UNCHECKED"); //test fonctionnement
+      //mettre l'action pour debloquer le poste 1
+    }
+  });
 
     // Fermer la page / deconnexion
     
@@ -94,9 +134,15 @@ V-0.4 -
 
   <!-- division pour les postes -->
   <div class="postesArea">
-    <p class="postes">postes ICI</p>
+    <h3 class="postes">POSTES</h3>
+
+    <!-- bouton submit pour envoyer/update le status des postes bloqués ou pas au serveur -->
+    <input id="postesSubmit" type="button" value="Submit changes" style="float: right;">
+    <!-- affichage des postes et de leur status -->
+    <p id="poste1">Poste 1 - Utilisateur: unknown - Etat: Disable --- Bloque:   <input id="poste1Lock" class="postes" type="checkbox"></p>
+    <p id="poste2">Poste 2 - Utilisateur: unknown - Etat: Disable --- Bloque:   <input id="poste2Lock" class="postes" type="checkbox"></p>
+    <p id="poste3">Poste 3 - Utilisateur: unknown - Etat: Disable --- Bloque:   <input id="poste3Lock" class="postes" type="checkbox"></p>
     <br>
-    <input class="postes" type="button" value="chose">
   </div>
   
   <!-- division pour les logs -->
