@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h2>Login Form</h2>
+
+  <form onsubmit="return login()">
+    <div class="imgcontainer">
+      <img src="ImageBravo/BRAVO.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+    </div>
+    <div class="container">
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+
+    </div>
+
+
+  </form>
+
+  <script>
+    function login() {
+      var username = document.getElementsByName("uname")[0].value;
+      var password = document.getElementsByName("psw")[0].value;
+
+      if (username === "admin" && password === "1234") {
+        // redirection vers ta page
+        window.location.href = "index.html";
+        return false;
+      } else {
+        alert("Mauvais username ou password");
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>
