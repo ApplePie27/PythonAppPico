@@ -1,16 +1,40 @@
-.postesArea
-{
+.postesArea {
     float: left;
     width: 70%;
-    height: 800px; /* only for demonstration, should be removed */
+    height: 800px;
+    /* only for demonstration, should be removed */
     background: #dbdbdb;
     padding: 20px;
 }
-.logsArea
-{
+
+.logsArea {
     float: right;
     width: 30%;
-    height: 800px; /* only for demonstration, should be removed */
+    height: 800px;
+    /* only for demonstration, should be removed */
     background: #ccc;
     padding: 20px;
+    
+    overflow-y: scroll;/* active le scrollbar uniquement dans la zone de logs  */
+
+    /* Scrollbar */
+    .logsArea::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    /* Track */
+    .logsArea::-webkit-scrollbar-track {
+        background: #aaa;
+    }
+
+    /* Handle */
+    .logsArea::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 6px;
+    }
+
+    /* Handle on hover */
+    .logsArea::-webkit-scrollbar-thumb:hover {
+        background: #333;
+    }
 }
