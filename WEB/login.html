@@ -61,7 +61,7 @@
       let $password = $('[name=psw]');
 
       //spécifier l'url vers le fichier php qui verifie le username et le password
-      let url = "../WEB/log.php?user=" + username + "&pass=" + password;
+      let url = "../WEB/login.php?user=" + username + "&pass=" + password;
 
       $.get(url, function(data, status)
       {
