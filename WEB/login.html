@@ -1,79 +1,62 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
 
-<head>
-  <!-- Permet d'adapter la page aux écrans mobiles -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
-
-<body>
-
-  <h2>Login Form</h2>
-
-   <!-- Formulaire de connexion appelle la fonction login() Si la fonction retourne false → empêche l'envoi du formulaire -->
-  <form  onsubmit="return login()">
-    <div class="imgcontainer">
-      <img src="BRAVO.png" alt="Avatar" class="avatar">
-    </div>
-
-     <!-- Username / Password -->
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <!-- Champ texte pour entrer le username, name="uname" : pour récupérer la valeur en JS ,obligatoire pour access -->
-      <input type="text" placeholder="Enter Username" name="uname" required> 
-    </div>
-    <div class="container">
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit" id="btnSubmit">Login</button>
-
-    </div>
-
-
-  </form>
-
-  <script>
-    function login()
-    {
-      /* // Récupère la valeur du champ username
-      var username = document.getElementsByName("uname")[0].value;
-      // Récupère la valeur du champ password
-      var password = document.getElementsByName("psw")[0].value;
-
-      //spécifier l'url vers le fichier php qui verifie le username et le password
-      let url = "../WEB/log.php?user=" + username + "&pass=" + password;
-
-      // Vérifie si le name et password sont corrects
-      if (username === "admin" && password === "1234") {
-        // redirection vers ta page
-        window.location.href = "index.html";
-        return false;
-      } else {
-        // Message d'erreur si mauvais login
-        alert("Mauvais username ou password");
-        return false;
-      }*/
-      //Récupérer les valeurs username et password
-      let username = $('[name=uname]');
-      let password = $('[name=psw]');
-
-      //spécifier l'url vers le fichier php qui verifie le username et le password
-      let url = "../WEB/login.php?user=" + username + "&pass=" + password;
-
-      $.get(url, function(data, status)
+  <head>
+    <!-- Permet d'adapter la page aux écrans mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      function login()
       {
-        if(data == "<1")
-        {
-          //window.location.href = "index.html";
-          window.open('index.html');
-        }
-      });
-    }
+        // Récupère la valeur du champ username
+        var username = document.getElementsByName("uname")[0].value;
+        // Récupère la valeur du champ password
+        var password = document.getElementsByName("psw")[0].value;
 
-  </script>
-</body>
+        // Vérifie si le name et password sont corrects
+        if (username === "ADMIN" && password === "1234")
+        {
+          // redirection vers ta page
+          window.open("index.html");
+          return true;
+        }
+        else
+        {
+          // Message d'erreur si mauvais login
+          alert("Mauvais username ou password");
+          return false;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <h2>Login Form</h2>
+
+    <!-- Formulaire de connexion appelle la fonction login() Si la fonction retourne false → empêche l'envoi du formulaire -->
+    <form  onsubmit="return login()">
+      <div class="imgcontainer">
+        <img src="BRAVO.png" alt="Avatar" class="avatar">
+      </div>
+
+      <!-- Username / Password -->
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+
+        <!-- Champ texte pour entrer le username, name="uname" : pour récupérer la valeur en JS ,obligatoire pour access -->
+        <input type="text" placeholder="Enter Username" name="uname" required> 
+      </div>
+      <div class="container">
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <button type="submit" id="btnSubmit">Login</button>
+
+      </div>
+    </form>
+
+  </body>
 
 </html>
