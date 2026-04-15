@@ -13,6 +13,7 @@ V-0.3 - 2026-03-18 (création fichier de styles + ajout pop-up camera + modifica
 V-0.4 - 2026-03-25 (ajour form pour login en plus d'un fichier php afin de verifier le mot de passe et le nom d'utilisateur)
 V-0.4.1 - 2026-03-31 (utilisation php par le form html plutot que php + "optimisation" code de la page de login + rename index.html et login.html -> login devient index et index devient preject)
 V-0.5 - 2026-04-08 (Utilisation d'un seul fichier html pour la page web pour compatibilité avec le serveur)
+V-0.6 - 2026-04-15 modifications barre de menu, ajouter 'Alarm' pour activer/desactiver l'alarm.
 -->
 <head>
 <!-- Permet d'utiliser les styles de W3schools -->
@@ -162,13 +163,20 @@ V-0.5 - 2026-04-08 (Utilisation d'un seul fichier html pour la page web pour com
     </div>
   </div> 
     <div class="w3-dropdown-hover">
-      <button class="w3-button">Options</button>
+      <button class="w3-button" style="background-color:#2b2b2b;">Options</button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-grey">
         <a href="#" id="blkAll" class="w3-bar-item w3-button">Bloquer tout</a>
         <a href="#" id="ublkAll" class="w3-bar-item w3-button">Debloquer tout</a>
       </div>
     </div>
     <!-- <a href="#" id="btnConnexion" class="w3-button" style="float: right" >Deconnexion</a> -->
+     <div class="w3-dropdown-hover">
+      <button class="w3-button">Alarm</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-grey">
+        <a href="#" id="blkAll" class="w3-bar-item w3-button">Désactiver</a>
+        <a href="#" id="ublkAll" class="w3-bar-item w3-button">Activer</a>
+      </div>
+    </div>
 
      
 
